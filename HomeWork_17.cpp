@@ -12,11 +12,12 @@ protected:
 
 public:
 
-	Person(std::string name,int age)    //Создаем конструктор
+	Person(std::string name, int age)    //Создаем конструктор
 	{
 		this->name = name;
 		this->age = age;
-	}
+	};
+	~Person() {};                          // Деструктор   
 
 	void display()                      //Создаем метод(вывод)
 	{
@@ -24,10 +25,27 @@ public:
 
 	}
 
-
-
 };
 
+class Employee : public Person             // Создаем класс работник 
+{
+   private:
+	   std::string company;
+	   int qw;
+
+   public:
+	   Employee(std::string company, int qw)
+	   {
+		   this->company = company;
+		   this -> qw = qw;
+	   };
+	   ~Employee() {};
+	   void showEmployeeName()
+	   {
+		   cout << "Имя: " << name << " Компания " << company << endl;
+       }
+
+};
 
 
 
