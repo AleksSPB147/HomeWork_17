@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-
+#include <string>
 using namespace std;
 
 class Person               // Создаем класс человек
@@ -21,7 +21,7 @@ public:
 
 	void display()                      //Создаем метод(вывод)
 	{
-		cout << "Имя: " << name<< " " << "Возраст: " << age;
+		cout << "Имя: " << name << " " << "Возраст: " << age << endl;;
 
 	}
 
@@ -31,20 +31,21 @@ class Employee : public Person             // Создаем класс рабо
 {
    private:
 	   std::string company;
-	   int qw;
+	   
 
    public:
-	   Employee(std::string company, int qw)
+	   Employee(std::string name, std::string company,int age) : Person(name, age)
 	   {
-		   this->company = company;
-		   this -> qw = qw;
+		   this -> company = company;
+		   
 	   };
 	   ~Employee() {};
 	   void showEmployeeName()
 	   {
 		   cout << "Имя: " << name << " Компания " << company << endl;
        }
-
+        public:
+			using Person::Person;
 };
 
 
@@ -53,8 +54,10 @@ class Employee : public Person             // Создаем класс рабо
 int main()
 {
 	setlocale(LC_ALL, "RU");
-	Person Adam("Adamov",45);
+	Person Adam("qw",12);
 	Adam.display();
+	Employee employee("Ivan", "Zenit", 23);
+	employee.showEmployeeName();
 	
 
 
