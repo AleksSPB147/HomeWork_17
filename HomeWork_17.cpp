@@ -24,7 +24,11 @@ public:
 		cout << "Имя: " << name << " " << "Возраст: " << age << endl;;
 
 	}
-
+	/*void setPerson(string name, int age)
+	{
+		this->name = name;
+		this->age = age;
+	}*/
 };
 
 class Employee : public Person             // Создаем класс работник 
@@ -54,12 +58,27 @@ class Employee : public Person             // Создаем класс рабо
 int main()
 {
 	setlocale(LC_ALL, "RU");
-	Person Adam("qw",12);
+
+	string name_Adam;
+	int age_Adam;
+	string company;
+	cout << "Введите имя"<< endl;
+	cin >> name_Adam;
+	cout << "Введите возраст"<< endl;
+	cin >> age_Adam;
+	Person Adam(name_Adam, 12);
 	Adam.display();
-	Employee employee("Ivan", "Zenit", 23);
+	cout << "Введите имя" << endl;
+	cin >> name_Adam;
+	cout << "Введите возраст" << endl;
+	cin >> age_Adam;
+	cout << "Укажите название компании"<< endl;
+	cin >> company;
+	
+	
+	Employee employee(name_Adam, company, age_Adam);
 	employee.showEmployeeName();
 	
-
 
 }
 
